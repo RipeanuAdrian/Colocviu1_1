@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         val buttonSouth = findViewById<Button>(R.id.button_SOUTH)
         val buttonEast = findViewById<Button>(R.id.button_EAST)
         val buttonWest = findViewById<Button>(R.id.button_WEST)
+        var buttonNext = findViewById<Button>(R.id.next_activity)
 
         val camp1 = findViewById<EditText>(R.id.camp_text)
 
@@ -48,6 +49,15 @@ class MainActivity : AppCompatActivity() {
             buttons_activity_number++;
 
         }
+        buttonNext.setOnClickListener {
+            val intent = android.content.Intent(this, Colocviu1_1SecondaryActivity::class.java)
+            intent.putExtra("count", buttons_activity_number)
+            intent.putExtra("text", camp1.text.toString())
+            startActivity(intent)
+        }
+
+
+
 
 
     }
